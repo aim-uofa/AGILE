@@ -1,0 +1,110 @@
+{
+  "MC1": {
+    "split": "train",
+    "contact_frame": 10,
+    "prepared_frames": 897,
+    "raw_frames": 897
+  },
+  "ABF12": {
+    "split": "train",
+    "contact_frame": 100,
+    "prepared_frames": 1024,
+    "raw_frames": 1383
+  },
+  "ABF14": {
+    "split": "train",
+    "contact_frame": 100,
+    "prepared_frames": 1024,
+    "raw_frames": 1383
+  },
+  "BB12": {
+    "split": "train",
+    "contact_frame": 200,
+    "prepared_frames": 1024,
+    "raw_frames": 1606
+  },
+  "BB13": {
+    "split": "train",
+    "contact_frame": 130,
+    "prepared_frames": 1024,
+    "raw_frames": 1606
+  },
+  "GPMF12": {
+    "split": "train",
+    "contact_frame": 105,
+    "prepared_frames": 1024,
+    "raw_frames": 1092
+  },
+  "GPMF14": {
+    "split": "train",
+    "contact_frame": 100,
+    "prepared_frames": 1024,
+    "raw_frames": 1092
+  },
+  "GSF13": {
+    "split": "train",
+    "contact_frame": 100,
+    "prepared_frames": 1024,
+    "raw_frames": 1592
+  },
+  "GSF14": {
+    "split": "train",
+    "contact_frame": 80,
+    "prepared_frames": 1024,
+    "raw_frames": 1592
+  },
+  "MC4": {
+    "split": "train",
+    "contact_frame": 0,
+    "prepared_frames": 896,
+    "raw_frames": 896
+  },
+  "MDF12": {
+    "split": "train",
+    "contact_frame": 150,
+    "prepared_frames": 1024,
+    "raw_frames": 2806
+  },
+  "MDF14": {
+    "split": "train",
+    "contact_frame": 250,
+    "prepared_frames": 1024,
+    "raw_frames": 2806
+  },
+  "ShSu10": {
+    "split": "train",
+    "contact_frame": 50,
+    "prepared_frames": 1024,
+    "raw_frames": 1847
+  },
+  "ShSu12": {
+    "split": "train",
+    "contact_frame": 110,
+    "prepared_frames": 1024,
+    "raw_frames": 1847
+  },
+  "SM2": {
+    "split": "train",
+    "contact_frame": 0,
+    "prepared_frames": 898,
+    "raw_frames": 898
+  },
+  "SM4": {
+    "split": "train",
+    "contact_frame": 0,
+    "prepared_frames": 898,
+    "raw_frames": 898
+  },
+  "SMu1": {
+    "split": "train",
+    "contact_frame": 20,
+    "prepared_frames": 1024,
+    "raw_frames": 1794
+  },
+  "SMu40": {
+    "split": "train",
+    "contact_frame": 0,
+    "prepared_frames": 1024,
+    "raw_frames": 2000
+  }
+}

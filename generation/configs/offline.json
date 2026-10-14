@@ -1,0 +1,13 @@
+{
+  "image": {
+    "provider": "provided"
+  },
+  "mesh": {
+    "backend": "provided"
+  },
+  "quality": {
+    "max_attempts": 3,
+    "min_score": 7,
+    "require_texture": true
+  }
+}

@@ -1,0 +1,4 @@
+torch==2.3.0
+torchvision==0.18.0
+numpy==1.26.4
+opencv-python==4.11.0.86

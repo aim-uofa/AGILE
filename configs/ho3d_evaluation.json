@@ -1,0 +1,99 @@
+{
+  "paper_url": "https://arxiv.org/abs/2602.04672",
+  "datasets": {
+    "ho3d": {
+      "scenes": [
+        {
+          "id": "MC1",
+          "start_frame": 10,
+          "frame_count": 897
+        },
+        {
+          "id": "ABF12",
+          "start_frame": 100,
+          "frame_count": 1024
+        },
+        {
+          "id": "ABF14",
+          "start_frame": 100,
+          "frame_count": 1024
+        },
+        {
+          "id": "BB12",
+          "start_frame": 200,
+          "frame_count": 1024
+        },
+        {
+          "id": "BB13",
+          "start_frame": 130,
+          "frame_count": 1024
+        },
+        {
+          "id": "GPMF12",
+          "start_frame": 105,
+          "frame_count": 1024
+        },
+        {
+          "id": "GPMF14",
+          "start_frame": 100,
+          "frame_count": 1024
+        },
+        {
+          "id": "GSF13",
+          "start_frame": 100,
+          "frame_count": 1024
+        },
+        {
+          "id": "GSF14",
+          "start_frame": 80,
+          "frame_count": 1024
+        },
+        {
+          "id": "MC4",
+          "start_frame": 0,
+          "frame_count": 896
+        },
+        {
+          "id": "MDF12",
+          "start_frame": 150,
+          "frame_count": 1024
+        },
+        {
+          "id": "MDF14",
+          "start_frame": 250,
+          "frame_count": 1024
+        },
+        {
+          "id": "ShSu10",
+          "start_frame": 50,
+          "frame_count": 1024
+        },
+        {
+          "id": "ShSu12",
+          "start_frame": 110,
+          "frame_count": 1024
+        },
+        {
+          "id": "SM2",
+          "start_frame": 0,
+          "frame_count": 898
+        },
+        {
+          "id": "SM4",
+          "start_frame": 0,
+          "frame_count": 898
+        },
+        {
+          "id": "SMu1",
+          "start_frame": 20,
+          "frame_count": 1024
+        },
+        {
+          "id": "SMu40",
+          "start_frame": 0,
+          "frame_count": 1024
+        }
+      ]
+    }
+  }
+}

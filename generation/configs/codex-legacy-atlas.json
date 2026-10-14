@@ -1,0 +1,22 @@
+{
+  "image": {
+    "provider": "disabled"
+  },
+  "mesh": {
+    "backend": "codex"
+  },
+  "texture": {
+    "provider": "provided"
+  },
+  "agent": {
+    "executable": "codex",
+    "reasoning_effort": "high",
+    "timeout_seconds": 600,
+    "review_context": "images_only"
+  },
+  "quality": {
+    "max_attempts": 2,
+    "min_score": 7.0,
+    "max_components": 16
+  }
+}

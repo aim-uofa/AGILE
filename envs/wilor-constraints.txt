@@ -1,0 +1,12 @@
+# Compatibility constraints for the public WiLoR video exporter; see installation guide.
+torch==2.0.1
+torchvision==0.15.2
+numpy==1.23.5
+opencv-python==4.11.0.86
+scikit-image==0.21.0
+matplotlib==3.7.5
+pytorch-lightning==2.0.9
+torchmetrics==1.2.1
+timm==0.9.16
+setuptools==70.3.0
+dill==0.3.8

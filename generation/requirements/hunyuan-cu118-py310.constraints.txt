@@ -1,0 +1,15 @@
+# Hunyuan3D-2 f8db630 / Python 3.10 / CUDA 11.8 compatibility baseline.
+# Keep this separate from the lightweight AGILE controller environment.
+torch==2.7.0+cu118
+torchvision==0.22.0+cu118
+diffusers==0.35.2
+transformers==4.57.1
+huggingface-hub==0.36.0
+accelerate==1.11.0
+gradio==5.49.1
+trimesh==4.9.0
+rembg==2.0.67
+omegaconf==2.3.0
+numpy==2.2.6
+opencv-python==4.12.0.88
+opencv-python-headless==4.12.0.88

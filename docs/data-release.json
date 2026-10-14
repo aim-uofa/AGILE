@@ -1,0 +1,205 @@
+{
+  "repository": "https://huggingface.co/datasets/Chrisss/AGILE",
+  "revision": "e306a6b973ac88838d0ec5c0325cddd039b4c28e",
+  "dataset": "HO3D",
+  "sequences": 18,
+  "archives": 36,
+  "archive_groups": {
+    "prepared_sequences": 18,
+    "generated_objects": 18
+  },
+  "archive_bytes": 18965258251,
+  "remote_size_and_sha256_verified": true,
+  "manifest_path": "ho3d/manifest.json",
+  "manifest_sha256": "416cd9288c48c356a4100eaae9e5599cb8fe3c2e94d8c5df40ad9ae5392e1e36",
+  "sha256sums_path": "ho3d/SHA256SUMS",
+  "limitations": [
+    "Some prepared sequences end before the raw sequence tail.",
+    "This is a data snapshot, not a claim of exact paper reproduction.",
+    "Generated assets and optimization meshes are retained as distinct representations.",
+    "ABF12 retains 1383 source depth files; only RGB/mask frames 0..1023 are observations used by the released preset."
+  ],
+  "per_sequence": [
+    {
+      "scene": "ABF12",
+      "prepared_frames": 1024,
+      "raw_frames": 1383,
+      "contact_frame": 100,
+      "layout": "moge-wilor-foundationpose"
+    },
+    {
+      "scene": "ABF14",
+      "prepared_frames": 1024,
+      "raw_frames": 1383,
+      "contact_frame": 100,
+      "layout": "moge-wilor-foundationpose"
+    },
+    {
+      "scene": "BB12",
+      "prepared_frames": 1024,
+      "raw_frames": 1606,
+      "contact_frame": 200,
+      "layout": "aligned-npz"
+    },
+    {
+      "scene": "BB13",
+      "prepared_frames": 1024,
+      "raw_frames": 1606,
+      "contact_frame": 130,
+      "layout": "aligned-npz"
+    },
+    {
+      "scene": "GPMF12",
+      "prepared_frames": 1024,
+      "raw_frames": 1092,
+      "contact_frame": 105,
+      "layout": "moge-wilor-foundationpose"
+    },
+    {
+      "scene": "GPMF14",
+      "prepared_frames": 1024,
+      "raw_frames": 1092,
+      "contact_frame": 100,
+      "layout": "moge-wilor-foundationpose"
+    },
+    {
+      "scene": "GSF13",
+      "prepared_frames": 1024,
+      "raw_frames": 1592,
+      "contact_frame": 100,
+      "layout": "aligned-npz"
+    },
+    {
+      "scene": "GSF14",
+      "prepared_frames": 1024,
+      "raw_frames": 1592,
+      "contact_frame": 80,
+      "layout": "aligned-npz"
+    },
+    {
+      "scene": "MC1",
+      "prepared_frames": 897,
+      "raw_frames": 897,
+      "contact_frame": 10,
+      "layout": "moge-wilor-foundationpose"
+    },
+    {
+      "scene": "MC4",
+      "prepared_frames": 896,
+      "raw_frames": 896,
+      "contact_frame": 0,
+      "layout": "moge-wilor-foundationpose"
+    },
+    {
+      "scene": "MDF12",
+      "prepared_frames": 1024,
+      "raw_frames": 2806,
+      "contact_frame": 150,
+      "layout": "aligned-npz"
+    },
+    {
+      "scene": "MDF14",
+      "prepared_frames": 1024,
+      "raw_frames": 2806,
+      "contact_frame": 250,
+      "layout": "aligned-npz"
+    },
+    {
+      "scene": "SM2",
+      "prepared_frames": 898,
+      "raw_frames": 898,
+      "contact_frame": 0,
+      "layout": "moge-wilor-foundationpose"
+    },
+    {
+      "scene": "SM4",
+      "prepared_frames": 898,
+      "raw_frames": 898,
+      "contact_frame": 0,
+      "layout": "moge-wilor-foundationpose"
+    },
+    {
+      "scene": "SMu1",
+      "prepared_frames": 1024,
+      "raw_frames": 1794,
+      "contact_frame": 20,
+      "layout": "aligned-npz"
+    },
+    {
+      "scene": "SMu40",
+      "prepared_frames": 1024,
+      "raw_frames": 2000,
+      "contact_frame": 0,
+      "layout": "aligned-npz"
+    },
+    {
+      "scene": "ShSu10",
+      "prepared_frames": 1024,
+      "raw_frames": 1847,
+      "contact_frame": 50,
+      "layout": "moge-wilor-foundationpose"
+    },
+    {
+      "scene": "ShSu12",
+      "prepared_frames": 1024,
+      "raw_frames": 1847,
+      "contact_frame": 110,
+      "layout": "moge-wilor-foundationpose"
+    }
+  ],
+  "path_schema": "agile-ho3d-v2",
+  "sequence_inputs_path": "ho3d/sequence_inputs.json",
+  "sequence_inputs_document": "ho3d-inputs.json",
+  "naming_update": {
+    "previous_revision": "16d9638343610758eecc072a1719418185933c60",
+    "previous_manifest_sha256": "d7ba1207c565af26a715105ae61128b14e75934fbc84725bfe6e0ac25bd79a96",
+    "file_contents_unchanged": true,
+    "verified_files": 65775,
+    "generated_object_directory": "object",
+    "object_initialization_directory": "object_pose",
+    "earlier_layout_readable": true
+  },
+  "archive_schema": "agile-ho3d-self-contained-v1",
+  "packaging_update": {
+    "date": "2026-10-14",
+    "previous_revision": "85b3a0c9f817d92142bda2cf46a94ed0a6b77c2c",
+    "previous_manifest_sha256": "23974c9cb5bca20c64b959039ff879ae143cda2b7d892fabf3463de3f3cbd85d",
+    "member_paths_unchanged": true,
+    "member_contents_unchanged": true,
+    "verified_files": 65775,
+    "merged_initialization_archives": 8,
+    "remote_archives_verified": 36,
+    "previous_revision_preserved": true,
+    "anonymous_download_and_loading_verified": [
+      "BB12",
+      "MC1"
+    ],
+    "validation_record": {
+      "path": "validation.json",
+      "section": "self_contained_data_packaging"
+    }
+  },
+  "optimized_results": {
+    "status": "published and verified",
+    "sequences": 18,
+    "archives": 18,
+    "archive_bytes": 5130118428,
+    "manifest_path": "ho3d/optimized/manifest.json",
+    "manifest_sha256": "4087445d0bda6b6ec05cd55d9b27d1366eaabe95c5b889e4bee8086a107536e5",
+    "input_revision": "e306a6b973ac88838d0ec5c0325cddd039b4c28e",
+    "result_format": "Native per-sequence optimized reconstructions; not neural network weights or optimizer resume states.",
+    "download_kind": "optimized",
+    "guide": "ho3d-results.md",
+    "revision": "d8b7fdc3225b13e08f20cd692faf04237980ad6a",
+    "remote_size_and_sha256_verified": true,
+    "remote_archives_verified": 18,
+    "previous_revision_preserved": true,
+    "all_previous_data_unchanged": true,
+    "anonymous_download_and_loading_verified": [
+      "MC1",
+      "BB13"
+    ],
+    "prediction_arrays_identical_to_scored_originals": true,
+    "candidate_download_cli_verified": true
+  }
+}

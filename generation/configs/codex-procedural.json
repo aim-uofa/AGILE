@@ -1,0 +1,6 @@
+{
+  "image": {"provider": "disabled"},
+  "mesh": {"backend": "codex"},
+  "agent": {"executable": "codex", "timeout_seconds": 600},
+  "quality": {"max_attempts": 2, "min_score": 7.0, "max_components": 16}
+}

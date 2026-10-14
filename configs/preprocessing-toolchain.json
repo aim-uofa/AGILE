@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-10-10",
+  "scope": "Public fork interface audit, without weights or GPU inference",
+  "tools": [
+    {
+      "name": "WiLoR",
+      "repository": "https://github.com/Chuan-10/WiLoR",
+      "audited_commit": "c851b1bae9d65420f00091b729ea0f26f45d69db",
+      "upstream": "rolpotamias/WiLoR",
+      "entrypoint": "demo_vid.py",
+      "entrypoint_sha256": "3bfb787969f8904846634030e9f3e027d5e2cf13b7d37394518ecf9a4fd0f02c",
+      "required_flags": [
+        "--img_folder",
+        "--out_folder"
+      ],
+      "source_url": "https://github.com/Chuan-10/WiLoR/blob/c851b1bae9d65420f00091b729ea0f26f45d69db/demo_vid.py"
+    },
+    {
+      "name": "MoGe",
+      "repository": "https://github.com/Chuan-10/MoGe",
+      "audited_commit": "14cd910362d75dda4413dd72a2c5c61dc5e78901",
+      "upstream": "microsoft/MoGe",
+      "entrypoint": "demo_moge.py",
+      "entrypoint_sha256": "cbd06ce095228078cf41480ec3efb2d3e37ddc3e0dbffe41579908b185bf7126",
+      "required_flags": [
+        "--scene-name",
+        "--img-path",
+        "--outdir"
+      ],
+      "source_url": "https://github.com/Chuan-10/MoGe/blob/14cd910362d75dda4413dd72a2c5c61dc5e78901/demo_moge.py"
+    },
+    {
+      "name": "FoundationPose",
+      "repository": "https://github.com/Chuan-10/FoundationPose",
+      "audited_commit": "07c8609ad5a6e2eea88023cbfc0eca433f076edf",
+      "upstream": "NVlabs/FoundationPose",
+      "entrypoint": "run_demo.py",
+      "entrypoint_sha256": "da7dca3ebf30f4d2d87c37fb3c0224b8f881d5165131735e91f49f07022ccd3f",
+      "required_flags": [
+        "--mesh_file",
+        "--depth_dir",
+        "--rgb_dir",
+        "--mask_dir",
+        "--debug_dir",
+        "--scale_mesh",
+        "--periodic_register",
+        "--register_interval",
+        "--register_cone_angle",
+        "--global_register_only",
+        "--scale_all"
+      ],
+      "source_url": "https://github.com/Chuan-10/FoundationPose/blob/07c8609ad5a6e2eea88023cbfc0eca433f076edf/run_demo.py"
+    }
+  ]
+}

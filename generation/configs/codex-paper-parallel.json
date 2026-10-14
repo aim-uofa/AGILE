@@ -1,0 +1,36 @@
+{
+  "image": {
+    "provider": "disabled"
+  },
+  "mesh": {
+    "backend": "codex"
+  },
+  "texture": {
+    "provider": "provided",
+    "layout": "mesh_uv"
+  },
+  "agent": {
+    "executable": "codex",
+    "reasoning_effort": "high",
+    "timeout_seconds": 600,
+    "review_context": "images_only"
+  },
+  "quality": {
+    "max_attempts": 3,
+    "min_score": 7.0,
+    "max_components": 16
+  },
+  "surface": {
+    "enabled": true,
+    "executable": "blender",
+    "method": "preserve",
+    "geometry_review": true,
+    "uv_method": "smart_project"
+  },
+  "generation": {
+    "require_selection": true,
+    "texture_review": true,
+    "max_texture_attempts": 3,
+    "min_texture_score": 7.0
+  }
+}

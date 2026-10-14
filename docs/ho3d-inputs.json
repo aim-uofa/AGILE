@@ -1,0 +1,457 @@
+{
+  "dataset": "HO3D",
+  "path_schema": "agile-ho3d-v2",
+  "sequences": [
+    {
+      "scene": "ABF12",
+      "layout": "moge-wilor-foundationpose",
+      "components": {
+        "rgb": "HO3D/preprocessed/train/ABF12/rgb",
+        "depth_camera": "HO3D/preprocessed/train/ABF12/moge",
+        "hand_estimation": "HO3D/preprocessed/train/ABF12/wilor",
+        "hand_initialization": "HO3D/preprocessed/train/ABF12/hand_processed",
+        "masks": "HO3D/preprocessed/train/ABF12/mask",
+        "object_initialization": "HO3D/preprocessed/train/ABF12/object_pose"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/ABF12/object_pose/original_mesh.obj",
+        "HO3D/preprocessed/train/ABF12/object_pose/scaled_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/ABF12/object",
+      "archives": [
+        "ho3d/generated/ABF12.tar.gz",
+        "ho3d/preprocessed/ABF12.tar.gz"
+      ],
+      "prepared_frames": 1024,
+      "raw_frames": 1383,
+      "contact_frame": 100
+    },
+    {
+      "scene": "ABF14",
+      "layout": "moge-wilor-foundationpose",
+      "components": {
+        "rgb": "HO3D/preprocessed/train/ABF14/rgb",
+        "depth_camera": "HO3D/preprocessed/train/ABF14/moge",
+        "hand_estimation": "HO3D/preprocessed/train/ABF14/wilor",
+        "hand_initialization": "HO3D/preprocessed/train/ABF14/hand_processed",
+        "masks": "HO3D/preprocessed/train/ABF14/mask",
+        "object_initialization": "HO3D/preprocessed/train/ABF14/object_pose"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/ABF14/object_pose/original_mesh.obj",
+        "HO3D/preprocessed/train/ABF14/object_pose/scaled_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/ABF14/object",
+      "archives": [
+        "ho3d/generated/ABF14.tar.gz",
+        "ho3d/preprocessed/ABF14.tar.gz"
+      ],
+      "prepared_frames": 1024,
+      "raw_frames": 1383,
+      "contact_frame": 100
+    },
+    {
+      "scene": "BB12",
+      "layout": "aligned-npz",
+      "components": {
+        "rgb_depth_camera": "HO3D/preprocessed/train/BB12/camera_data.npz",
+        "hand_alignment": "HO3D/preprocessed/train/BB12/mano_transforms.npz",
+        "hand_shape": "HO3D/preprocessed/train/BB12/mano_betas.npz",
+        "hand_pose": "HO3D/preprocessed/train/BB12/mano_hand_pose.npz",
+        "hand_orientation": "HO3D/preprocessed/train/BB12/mano_global_orient.npz",
+        "object_initialization": "HO3D/preprocessed/train/BB12/object_poses.npz",
+        "hand_mask": "HO3D/preprocessed/train/BB12/hand",
+        "object_mask": "HO3D/preprocessed/train/BB12/object",
+        "hand_keypoints_2d": "HO3D/preprocessed/train/BB12/wilor/mano_joints_2d.npz"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/BB12/object_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/BB12/object",
+      "archives": [
+        "ho3d/generated/BB12.tar.gz",
+        "ho3d/preprocessed/BB12.tar.gz"
+      ],
+      "prepared_frames": 1024,
+      "raw_frames": 1606,
+      "contact_frame": 200
+    },
+    {
+      "scene": "BB13",
+      "layout": "aligned-npz",
+      "components": {
+        "rgb_depth_camera": "HO3D/preprocessed/train/BB13/camera_data.npz",
+        "hand_alignment": "HO3D/preprocessed/train/BB13/mano_transforms.npz",
+        "hand_shape": "HO3D/preprocessed/train/BB13/mano_betas.npz",
+        "hand_pose": "HO3D/preprocessed/train/BB13/mano_hand_pose.npz",
+        "hand_orientation": "HO3D/preprocessed/train/BB13/mano_global_orient.npz",
+        "object_initialization": "HO3D/preprocessed/train/BB13/object_poses.npz",
+        "hand_mask": "HO3D/preprocessed/train/BB13/hand",
+        "object_mask": "HO3D/preprocessed/train/BB13/object",
+        "hand_keypoints_2d": "HO3D/preprocessed/train/BB13/wilor/mano_joints_2d.npz"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/BB13/object_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/BB13/object",
+      "archives": [
+        "ho3d/generated/BB13.tar.gz",
+        "ho3d/preprocessed/BB13.tar.gz"
+      ],
+      "prepared_frames": 1024,
+      "raw_frames": 1606,
+      "contact_frame": 130
+    },
+    {
+      "scene": "GPMF12",
+      "layout": "moge-wilor-foundationpose",
+      "components": {
+        "rgb": "HO3D/preprocessed/train/GPMF12/rgb",
+        "depth_camera": "HO3D/preprocessed/train/GPMF12/moge",
+        "hand_estimation": "HO3D/preprocessed/train/GPMF12/wilor",
+        "hand_initialization": "HO3D/preprocessed/train/GPMF12/hand_processed",
+        "masks": "HO3D/preprocessed/train/GPMF12/mask",
+        "object_initialization": "HO3D/preprocessed/train/GPMF12/object_pose"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/GPMF12/object_pose/original_mesh.obj",
+        "HO3D/preprocessed/train/GPMF12/object_pose/scaled_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/GPMF12/object",
+      "archives": [
+        "ho3d/generated/GPMF12.tar.gz",
+        "ho3d/preprocessed/GPMF12.tar.gz"
+      ],
+      "prepared_frames": 1024,
+      "raw_frames": 1092,
+      "contact_frame": 105
+    },
+    {
+      "scene": "GPMF14",
+      "layout": "moge-wilor-foundationpose",
+      "components": {
+        "rgb": "HO3D/preprocessed/train/GPMF14/rgb",
+        "depth_camera": "HO3D/preprocessed/train/GPMF14/moge",
+        "hand_estimation": "HO3D/preprocessed/train/GPMF14/wilor",
+        "hand_initialization": "HO3D/preprocessed/train/GPMF14/hand_processed",
+        "masks": "HO3D/preprocessed/train/GPMF14/mask",
+        "object_initialization": "HO3D/preprocessed/train/GPMF14/object_pose"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/GPMF14/object_pose/original_mesh.obj",
+        "HO3D/preprocessed/train/GPMF14/object_pose/scaled_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/GPMF14/object",
+      "archives": [
+        "ho3d/generated/GPMF14.tar.gz",
+        "ho3d/preprocessed/GPMF14.tar.gz"
+      ],
+      "prepared_frames": 1024,
+      "raw_frames": 1092,
+      "contact_frame": 100
+    },
+    {
+      "scene": "GSF13",
+      "layout": "aligned-npz",
+      "components": {
+        "rgb_depth_camera": "HO3D/preprocessed/train/GSF13/camera_data.npz",
+        "hand_alignment": "HO3D/preprocessed/train/GSF13/mano_transforms.npz",
+        "hand_shape": "HO3D/preprocessed/train/GSF13/mano_betas.npz",
+        "hand_pose": "HO3D/preprocessed/train/GSF13/mano_hand_pose.npz",
+        "hand_orientation": "HO3D/preprocessed/train/GSF13/mano_global_orient.npz",
+        "object_initialization": "HO3D/preprocessed/train/GSF13/object_poses.npz",
+        "hand_mask": "HO3D/preprocessed/train/GSF13/hand",
+        "object_mask": "HO3D/preprocessed/train/GSF13/object",
+        "hand_keypoints_2d": "HO3D/preprocessed/train/GSF13/wilor/mano_joints_2d.npz"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/GSF13/object_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/GSF13/object",
+      "archives": [
+        "ho3d/generated/GSF13.tar.gz",
+        "ho3d/preprocessed/GSF13.tar.gz"
+      ],
+      "prepared_frames": 1024,
+      "raw_frames": 1592,
+      "contact_frame": 100
+    },
+    {
+      "scene": "GSF14",
+      "layout": "aligned-npz",
+      "components": {
+        "rgb_depth_camera": "HO3D/preprocessed/train/GSF14/camera_data.npz",
+        "hand_alignment": "HO3D/preprocessed/train/GSF14/mano_transforms.npz",
+        "hand_shape": "HO3D/preprocessed/train/GSF14/mano_betas.npz",
+        "hand_pose": "HO3D/preprocessed/train/GSF14/mano_hand_pose.npz",
+        "hand_orientation": "HO3D/preprocessed/train/GSF14/mano_global_orient.npz",
+        "object_initialization": "HO3D/preprocessed/train/GSF14/object_poses.npz",
+        "hand_mask": "HO3D/preprocessed/train/GSF14/hand",
+        "object_mask": "HO3D/preprocessed/train/GSF14/object",
+        "hand_keypoints_2d": "HO3D/preprocessed/train/GSF14/wilor/mano_joints_2d.npz"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/GSF14/object_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/GSF14/object",
+      "archives": [
+        "ho3d/generated/GSF14.tar.gz",
+        "ho3d/preprocessed/GSF14.tar.gz"
+      ],
+      "prepared_frames": 1024,
+      "raw_frames": 1592,
+      "contact_frame": 80
+    },
+    {
+      "scene": "MC1",
+      "layout": "moge-wilor-foundationpose",
+      "components": {
+        "rgb": "HO3D/preprocessed/train/MC1/rgb",
+        "depth_camera": "HO3D/preprocessed/train/MC1/moge",
+        "hand_estimation": "HO3D/preprocessed/train/MC1/wilor",
+        "hand_initialization": "HO3D/preprocessed/train/MC1/hand_processed",
+        "masks": "HO3D/preprocessed/train/MC1/mask",
+        "object_initialization": "HO3D/preprocessed/train/MC1/object_pose"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/MC1/object_pose/original_mesh.obj",
+        "HO3D/preprocessed/train/MC1/object_pose/scaled_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/MC1/object",
+      "archives": [
+        "ho3d/generated/MC1.tar.gz",
+        "ho3d/preprocessed/MC1.tar.gz"
+      ],
+      "prepared_frames": 897,
+      "raw_frames": 897,
+      "contact_frame": 10
+    },
+    {
+      "scene": "MC4",
+      "layout": "moge-wilor-foundationpose",
+      "components": {
+        "rgb": "HO3D/preprocessed/train/MC4/rgb",
+        "depth_camera": "HO3D/preprocessed/train/MC4/moge",
+        "hand_estimation": "HO3D/preprocessed/train/MC4/wilor",
+        "hand_initialization": "HO3D/preprocessed/train/MC4/hand_processed",
+        "masks": "HO3D/preprocessed/train/MC4/mask",
+        "object_initialization": "HO3D/preprocessed/train/MC4/object_pose"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/MC4/object_pose/original_mesh.obj",
+        "HO3D/preprocessed/train/MC4/object_pose/scaled_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/MC4/object",
+      "archives": [
+        "ho3d/generated/MC4.tar.gz",
+        "ho3d/preprocessed/MC4.tar.gz"
+      ],
+      "prepared_frames": 896,
+      "raw_frames": 896,
+      "contact_frame": 0
+    },
+    {
+      "scene": "MDF12",
+      "layout": "aligned-npz",
+      "components": {
+        "rgb_depth_camera": "HO3D/preprocessed/train/MDF12/camera_data.npz",
+        "hand_alignment": "HO3D/preprocessed/train/MDF12/mano_transforms.npz",
+        "hand_shape": "HO3D/preprocessed/train/MDF12/mano_betas.npz",
+        "hand_pose": "HO3D/preprocessed/train/MDF12/mano_hand_pose.npz",
+        "hand_orientation": "HO3D/preprocessed/train/MDF12/mano_global_orient.npz",
+        "object_initialization": "HO3D/preprocessed/train/MDF12/object_poses.npz",
+        "hand_mask": "HO3D/preprocessed/train/MDF12/hand",
+        "object_mask": "HO3D/preprocessed/train/MDF12/object",
+        "hand_keypoints_2d": "HO3D/preprocessed/train/MDF12/wilor/mano_joints_2d.npz"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/MDF12/object_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/MDF12/object",
+      "archives": [
+        "ho3d/generated/MDF12.tar.gz",
+        "ho3d/preprocessed/MDF12.tar.gz"
+      ],
+      "prepared_frames": 1024,
+      "raw_frames": 2806,
+      "contact_frame": 150
+    },
+    {
+      "scene": "MDF14",
+      "layout": "aligned-npz",
+      "components": {
+        "rgb_depth_camera": "HO3D/preprocessed/train/MDF14/camera_data.npz",
+        "hand_alignment": "HO3D/preprocessed/train/MDF14/mano_transforms.npz",
+        "hand_shape": "HO3D/preprocessed/train/MDF14/mano_betas.npz",
+        "hand_pose": "HO3D/preprocessed/train/MDF14/mano_hand_pose.npz",
+        "hand_orientation": "HO3D/preprocessed/train/MDF14/mano_global_orient.npz",
+        "object_initialization": "HO3D/preprocessed/train/MDF14/object_poses.npz",
+        "hand_mask": "HO3D/preprocessed/train/MDF14/hand",
+        "object_mask": "HO3D/preprocessed/train/MDF14/object",
+        "hand_keypoints_2d": "HO3D/preprocessed/train/MDF14/wilor/mano_joints_2d.npz"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/MDF14/object_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/MDF14/object",
+      "archives": [
+        "ho3d/generated/MDF14.tar.gz",
+        "ho3d/preprocessed/MDF14.tar.gz"
+      ],
+      "prepared_frames": 1024,
+      "raw_frames": 2806,
+      "contact_frame": 250
+    },
+    {
+      "scene": "SM2",
+      "layout": "moge-wilor-foundationpose",
+      "components": {
+        "rgb": "HO3D/preprocessed/train/SM2/rgb",
+        "depth_camera": "HO3D/preprocessed/train/SM2/moge",
+        "hand_estimation": "HO3D/preprocessed/train/SM2/wilor",
+        "hand_initialization": "HO3D/preprocessed/train/SM2/hand_processed",
+        "masks": "HO3D/preprocessed/train/SM2/mask",
+        "object_initialization": "HO3D/preprocessed/train/SM2/object_pose"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/SM2/object_pose/original_mesh.obj",
+        "HO3D/preprocessed/train/SM2/object_pose/scaled_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/SM2/object",
+      "archives": [
+        "ho3d/generated/SM2.tar.gz",
+        "ho3d/preprocessed/SM2.tar.gz"
+      ],
+      "prepared_frames": 898,
+      "raw_frames": 898,
+      "contact_frame": 0
+    },
+    {
+      "scene": "SM4",
+      "layout": "moge-wilor-foundationpose",
+      "components": {
+        "rgb": "HO3D/preprocessed/train/SM4/rgb",
+        "depth_camera": "HO3D/preprocessed/train/SM4/moge",
+        "hand_estimation": "HO3D/preprocessed/train/SM4/wilor",
+        "hand_initialization": "HO3D/preprocessed/train/SM4/hand_processed",
+        "masks": "HO3D/preprocessed/train/SM4/mask",
+        "object_initialization": "HO3D/preprocessed/train/SM4/object_pose"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/SM4/object_pose/original_mesh.obj",
+        "HO3D/preprocessed/train/SM4/object_pose/scaled_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/SM4/object",
+      "archives": [
+        "ho3d/generated/SM4.tar.gz",
+        "ho3d/preprocessed/SM4.tar.gz"
+      ],
+      "prepared_frames": 898,
+      "raw_frames": 898,
+      "contact_frame": 0
+    },
+    {
+      "scene": "SMu1",
+      "layout": "aligned-npz",
+      "components": {
+        "rgb_depth_camera": "HO3D/preprocessed/train/SMu1/camera_data.npz",
+        "hand_alignment": "HO3D/preprocessed/train/SMu1/mano_transforms.npz",
+        "hand_shape": "HO3D/preprocessed/train/SMu1/mano_betas.npz",
+        "hand_pose": "HO3D/preprocessed/train/SMu1/mano_hand_pose.npz",
+        "hand_orientation": "HO3D/preprocessed/train/SMu1/mano_global_orient.npz",
+        "object_initialization": "HO3D/preprocessed/train/SMu1/object_poses.npz",
+        "hand_mask": "HO3D/preprocessed/train/SMu1/hand",
+        "object_mask": "HO3D/preprocessed/train/SMu1/object",
+        "hand_keypoints_2d": "HO3D/preprocessed/train/SMu1/wilor/mano_joints_2d.npz"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/SMu1/object_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/SMu1/object",
+      "archives": [
+        "ho3d/generated/SMu1.tar.gz",
+        "ho3d/preprocessed/SMu1.tar.gz"
+      ],
+      "prepared_frames": 1024,
+      "raw_frames": 1794,
+      "contact_frame": 20
+    },
+    {
+      "scene": "SMu40",
+      "layout": "aligned-npz",
+      "components": {
+        "rgb_depth_camera": "HO3D/preprocessed/train/SMu40/camera_data.npz",
+        "hand_alignment": "HO3D/preprocessed/train/SMu40/mano_transforms.npz",
+        "hand_shape": "HO3D/preprocessed/train/SMu40/mano_betas.npz",
+        "hand_pose": "HO3D/preprocessed/train/SMu40/mano_hand_pose.npz",
+        "hand_orientation": "HO3D/preprocessed/train/SMu40/mano_global_orient.npz",
+        "object_initialization": "HO3D/preprocessed/train/SMu40/object_poses.npz",
+        "hand_mask": "HO3D/preprocessed/train/SMu40/hand",
+        "object_mask": "HO3D/preprocessed/train/SMu40/object",
+        "hand_keypoints_2d": "HO3D/preprocessed/train/SMu40/wilor/mano_joints_2d.npz"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/SMu40/object_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/SMu40/object",
+      "archives": [
+        "ho3d/generated/SMu40.tar.gz",
+        "ho3d/preprocessed/SMu40.tar.gz"
+      ],
+      "prepared_frames": 1024,
+      "raw_frames": 2000,
+      "contact_frame": 0
+    },
+    {
+      "scene": "ShSu10",
+      "layout": "moge-wilor-foundationpose",
+      "components": {
+        "rgb": "HO3D/preprocessed/train/ShSu10/rgb",
+        "depth_camera": "HO3D/preprocessed/train/ShSu10/moge",
+        "hand_estimation": "HO3D/preprocessed/train/ShSu10/wilor",
+        "hand_initialization": "HO3D/preprocessed/train/ShSu10/hand_processed",
+        "masks": "HO3D/preprocessed/train/ShSu10/mask",
+        "object_initialization": "HO3D/preprocessed/train/ShSu10/object_pose"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/ShSu10/object_pose/original_mesh.obj",
+        "HO3D/preprocessed/train/ShSu10/object_pose/scaled_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/ShSu10/object",
+      "archives": [
+        "ho3d/generated/ShSu10.tar.gz",
+        "ho3d/preprocessed/ShSu10.tar.gz"
+      ],
+      "prepared_frames": 1024,
+      "raw_frames": 1847,
+      "contact_frame": 50
+    },
+    {
+      "scene": "ShSu12",
+      "layout": "moge-wilor-foundationpose",
+      "components": {
+        "rgb": "HO3D/preprocessed/train/ShSu12/rgb",
+        "depth_camera": "HO3D/preprocessed/train/ShSu12/moge",
+        "hand_estimation": "HO3D/preprocessed/train/ShSu12/wilor",
+        "hand_initialization": "HO3D/preprocessed/train/ShSu12/hand_processed",
+        "masks": "HO3D/preprocessed/train/ShSu12/mask",
+        "object_initialization": "HO3D/preprocessed/train/ShSu12/object_pose"
+      },
+      "optimization_mesh_files": [
+        "HO3D/preprocessed/train/ShSu12/object_pose/original_mesh.obj",
+        "HO3D/preprocessed/train/ShSu12/object_pose/scaled_mesh.obj"
+      ],
+      "generated_object": "HO3D/generated/train/ShSu12/object",
+      "archives": [
+        "ho3d/generated/ShSu12.tar.gz",
+        "ho3d/preprocessed/ShSu12.tar.gz"
+      ],
+      "prepared_frames": 1024,
+      "raw_frames": 1847,
+      "contact_frame": 110
+    }
+  ],
+  "selection": "Per-sequence inputs retained from the validated HO3D configuration.",
+  "generated_objects": "Selected generated assets are separate from the prepared optimization meshes.",
+  "archive_schema": "agile-ho3d-self-contained-v1"
+}

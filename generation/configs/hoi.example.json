@@ -1,0 +1,17 @@
+{
+  "repository": "/ABS/AGILE",
+  "python": "/ABS/OPTIM_ENV/bin/python",
+  "raw_data_root": "/ABS/HO3D/raw",
+  "mano_root": "/ABS/MANO",
+  "dino_model_path": "/ABS/dinov3",
+  "wilor_path": "/ABS/WiLoR",
+  "moge_path": "/ABS/MoGe",
+  "moge_env": "moge",
+  "foundationpose_path": "/ABS/FoundationPose",
+  "wilor_env": "wilor",
+  "foundationpose_env": "foundationpose",
+  "hoi_env": "agile-optim",
+  "max_frames": 1024,
+  "timeout_seconds": 86400,
+  "allow_best_available": false
+}

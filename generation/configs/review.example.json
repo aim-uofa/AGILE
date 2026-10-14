@@ -1,0 +1,9 @@
+{
+  "evidence_digest": "REPLACE_WITH_CURRENT_EVIDENCE_DIGEST",
+  "decision": "retry",
+  "score": 4,
+  "matches_reference": false,
+  "no_hand_geometry": true,
+  "consistent_views": false,
+  "feedback": "Example: the back and side structures disagree. Replace this with feedback grounded in the actual evidence."
+}

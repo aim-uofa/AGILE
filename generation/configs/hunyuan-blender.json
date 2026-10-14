@@ -1,0 +1,38 @@
+{
+  "image": {
+    "provider": "gemini",
+    "model": null,
+    "api": "generate_content",
+    "api_key_env": "AGILE_IMAGE_API_KEY"
+  },
+  "mesh": {
+    "backend": "hunyuan",
+    "python": "/ABS/HUNYUAN_ENV/bin/python",
+    "repository": "/ABS/Hunyuan3D-2",
+    "shape_model": null,
+    "subfolder": null,
+    "texture_model": null
+  },
+  "quality": {
+    "max_attempts": 3,
+    "min_score": 7,
+    "require_texture": true
+  },
+  "surface": {
+    "enabled": true,
+    "executable": "blender",
+    "method": "quadriflow",
+    "target_faces": 3000,
+    "texture_size": 1024,
+    "geometry_review": true
+  },
+  "texture": {
+    "provider": "provided",
+    "layout": "mesh_uv"
+  },
+  "agent": {
+    "executable": "codex",
+    "reasoning_effort": "high",
+    "review_context": "images_only"
+  }
+}

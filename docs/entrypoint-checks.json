@@ -1,0 +1,120 @@
+[
+  {
+    "command": [
+      "train.py",
+      "--help"
+    ],
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "command": [
+      "-m",
+      "optimization.run_ho3d",
+      "--help"
+    ],
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "command": [
+      "-m",
+      "optimization.run_ho3d",
+      "--scene",
+      "MC1",
+      "--data-root",
+      "/tmp/data",
+      "--output",
+      "/tmp/output",
+      "--dry-run"
+    ],
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "command": [
+      "-m",
+      "preprocessing.preprocess_ho3d",
+      "--help"
+    ],
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "command": [
+      "-m",
+      "preprocessing.process_hand",
+      "--help"
+    ],
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "command": [
+      "-m",
+      "preprocessing.export_moge",
+      "--help"
+    ],
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "command": [
+      "tools/download_ho3d.py",
+      "--help"
+    ],
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "command": [
+      "tools/prepare_mano_assets.py",
+      "--help"
+    ],
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "command": [
+      "-m",
+      "scripts.experiments.evaluate_protocol",
+      "--help"
+    ],
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "command": [
+      "-m",
+      "scripts.vis.pack_result",
+      "--help"
+    ],
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "command": [
+      "-m",
+      "scripts.vis.run_viser_hoi",
+      "--help"
+    ],
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "command": [
+      "-m",
+      "scripts.vis.render_demo",
+      "--help"
+    ],
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "command": [
+      "tools/check_release.py"
+    ],
+    "returncode": 0,
+    "stderr_tail": ""
+  }
+]

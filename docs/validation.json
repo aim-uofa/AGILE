@@ -1,0 +1,544 @@
+{
+  "date": "2026-10-15",
+  "scope": "Complete 18-sequence HO3D validation using the released configurations and public Hugging Face inputs.",
+  "source_preparation_commit": "bf76ec7",
+  "reference_ho3d_setting": "Fixed original WiLoR rotation, joints_2d translation initialization, mask-based object recovery",
+  "correctness_fixes": [
+    "half-turn-safe rotation conversion and native matrix export",
+    "stable batched SO(3) log and conservative convergence from ccf1cf40d65aa3f90a42259836fc2666ab6c124d",
+    "explicit matrix-field result loading from a7877db1e4b4bb69dae8a942787ce147c5f63f5c"
+  ],
+  "tests": {
+    "optimization_and_preprocessing_cpu": {
+      "passed": 142,
+      "failed": 0,
+      "licensed_mano_camera_regressions": "executed"
+    },
+    "generation": {
+      "passed": 146,
+      "skipped": 2,
+      "failed": 0,
+      "skip_reason": "External Blender runtime not configured"
+    },
+    "documented_entrypoints": {
+      "passed": 13,
+      "failed": 0
+    },
+    "source_hygiene": {
+      "python_files": 154,
+      "ho3d_scenes": 18,
+      "problems": []
+    }
+  },
+  "parser_equivalence": {
+    "MC1": {
+      "frames": [
+        0,
+        5
+      ],
+      "fields_exact": [
+        "frame_ids",
+        "K",
+        "rgbd",
+        "hand_masks",
+        "object_masks",
+        "mano_betas",
+        "mano_hand_pose",
+        "mano_global_orient",
+        "mano_masks",
+        "mano_joints_2d",
+        "mano_joints",
+        "mano_vertices",
+        "mano_faces",
+        "object_poses_in_cam",
+        "object_texture",
+        "mano_transforms",
+        "object_mesh"
+      ],
+      "comparison": "original parser and portable parser, identical CPU inputs"
+    },
+    "BB12": {
+      "frames": [
+        0,
+        5
+      ],
+      "comparison": "portable aligned loader vs original saved arrays",
+      "exact": [
+        "rgbd",
+        "cam_c2w",
+        "K",
+        "rgbs",
+        "mano_global_orient",
+        "mano_joints",
+        "object_poses_in_cam",
+        "mano_joints_2d"
+      ],
+      "no_gt_or_normal_cache_required": true
+    }
+  },
+  "limits": [
+    "Current 18-sequence scores use the full available prepared range and the released v2 evaluator; they are not an exact reproduction of the original paper evaluation.",
+    "MANO, DINO weights and original evaluation annotations must be obtained separately.",
+    "The recorded run used the frozen validated commit; later local documentation and generation-profile edits were not part of that run.",
+    "Access guards and syscall traces are audits, not a kernel sandbox."
+  ],
+  "data_checks": {
+    "all_archive_remote_sizes_and_sha256": 44,
+    "mesh_material_and_input_coverage_audits": 36,
+    "public_download_smoke": {
+      "scene": "MC1",
+      "kind": "generated",
+      "authenticated": false,
+      "revision": "16d9638343610758eecc072a1719418185933c60",
+      "archive_and_member_hashes_passed": true
+    },
+    "whitespace_cleanup": "Python AST unchanged except docstring whitespace"
+  },
+  "historical_namespace_preparation": {
+    "scope": "Local HO3D source-release candidate; no code push and no new full-sequence benchmark.",
+    "limits": [
+      "CPU regressions and two-frame parser checks do not establish full-sequence metric reproduction.",
+      "No new GPU optimization, external model inference or end-to-end generation was run for this namespace refactor.",
+      "The clean-install recipe was not rebuilt from scratch in this task.",
+      "Third-party redistribution notices must be resolved before publishing the local code draft."
+    ]
+  },
+  "end_to_end_mc1": {
+    "completed_at": "2026-10-13T09:38:13.214556+00:00",
+    "status": "success",
+    "source_commit": "ffd655561cfca1bfba11e3d8483bcb3b01d945f4",
+    "source_archive_sha256": "a112b9df217f27d30404ae564e7b2300f4beec37e333646e14a65e1435f3ff1a",
+    "data_repository": "https://huggingface.co/datasets/Chrisss/AGILE",
+    "data_revision": "16d9638343610758eecc072a1719418185933c60",
+    "download_authenticated": false,
+    "data_origin": "Anonymous fresh-cache download in initial attempt; immutable local files reused via hardlinks after the topology fix.",
+    "downloaded_members_rehashed": 4505,
+    "download_manifest_sha256": "d7ba1207c565af26a715105ae61128b14e75934fbc84725bfe6e0ac25bd79a96",
+    "frames": {
+      "first": 0,
+      "last": 895,
+      "interval": 5,
+      "count": 180,
+      "valid_GT": 164,
+      "valid_GT_prediction_coverage": 1.0
+    },
+    "stage_returncodes": {
+      "preflight": 0,
+      "train": 0,
+      "eval": 0,
+      "verify": 0
+    },
+    "metrics_version": "evaluation-v2-gt-cv-robust-icp",
+    "full_sequence_metrics": {
+      "cd_icp": 0.6220586969459592,
+      "f5_icp": 53.001929387402235,
+      "f10_icp": 95.61982895876005,
+      "mpjpe_ra_r": 3.373997449874878,
+      "mpjpe_right_scaled": 3.3014073371887207,
+      "cd_right_icp": 1.3236660632082358,
+      "f5_right_icp": 37.08268961144731,
+      "f10_right_icp": 79.16423592128946,
+      "cd_interaction_hand_sim3_per_frame": 1.3236660632082358,
+      "f5_interaction_hand_sim3_per_frame": 37.08268961144731,
+      "f10_interaction_hand_sim3_per_frame": 79.16423592128946,
+      "cd_right": 1.3160435264513957,
+      "f5_right": 35.865408476523044,
+      "f10_right": 79.06174989432913
+    },
+    "mano_faces": 1552,
+    "original_wilor_parameters_exact": true,
+    "relative_hand_rotation_zero": true,
+    "native_geometry": {
+      "all_frames_verified": true,
+      "count": 180,
+      "geometry_source": {
+        "variant": "optimization_proxy",
+        "mesh": "object_assets/optimization_proxy.glb",
+        "vertices": 5002,
+        "triangles": 10000,
+        "file_sha256": "8ec4a7cc6f0ef63771590db1475bb3c8e7fca529f215dafe05ce55369a9809cf"
+      },
+      "maximum_rotation_error_deg": 7.489292785335756e-06,
+      "maximum_object_error_mm": 4.6632903070132106e-05
+    },
+    "frozen_source_files_verified": 193,
+    "access_audit": {
+      "train": {
+        "successful_absolute_open_paths": 9508,
+        "disallowed_paths": [],
+        "unfinished_calls_not_parsed": 0
+      },
+      "eval": {
+        "successful_absolute_open_paths": 4628,
+        "disallowed_paths": [],
+        "unfinished_calls_not_parsed": 0
+      }
+    },
+    "training_read_evaluation_ground_truth": false,
+    "preserved_attempts": [
+      "Initial run stopped after detecting 14 missing wrist-cap faces; all outputs preserved.",
+      "Auxiliary manifest-path verification failed once after training/evaluation succeeded; corrected and rechecked without retraining or reevaluation."
+    ],
+    "auxiliary_checks": {
+      "proxy_tests": 6,
+      "manifest_tests": 6,
+      "original_verify_returncode": 1,
+      "final_verify_returncode": 0
+    },
+    "latest_local_documentation_changes_in_run": false,
+    "code_pushed": false
+  },
+  "data_directory_rename": {
+    "data_revision": "85b3a0c9f817d92142bda2cf46a94ed0a6b77c2c",
+    "previous_data_revision": "16d9638343610758eecc072a1719418185933c60",
+    "content_unchanged_files": 65775,
+    "remote_archive_checksums_verified": 44,
+    "anonymous_download": {
+      "scene": "MC1",
+      "archives": 2,
+      "verified_files": 4505
+    },
+    "parser_equivalence": {
+      "passed": true,
+      "frame_ids": [
+        0,
+        5
+      ],
+      "exact_fields": [
+        "frame_ids",
+        "K",
+        "rgbd",
+        "hand_masks",
+        "object_masks",
+        "mano_betas",
+        "mano_hand_pose",
+        "mano_global_orient",
+        "mano_masks",
+        "mano_joints_2d",
+        "mano_joints",
+        "mano_vertices",
+        "mano_faces",
+        "object_poses_in_cam",
+        "object_texture",
+        "cam_c2w",
+        "camtoworlds",
+        "mano_transforms",
+        "object_mesh.vertices",
+        "object_mesh.faces"
+      ]
+    },
+    "scope": "CPU input equivalence after a directory-only rename; no new optimization run.",
+    "earlier_end_to_end_run_unchanged": true
+  },
+  "vlm_api_workflow": {
+    "date": "2026-10-14",
+    "scope": "Configurable VLM API selection and review with automatic image-API texture refinement; optional Codex route retained.",
+    "generation_regressions": {
+      "passed": 175,
+      "skipped": 2,
+      "failed": 0,
+      "new_vlm_tests": 20,
+      "skip_reason": "Blender integration executable not configured"
+    },
+    "offline_pipeline_checks": [
+      "reference selection",
+      "multiview rejection and revision",
+      "3D worker and surface-stage handoff",
+      "geometry review",
+      "texture rejection and API correction",
+      "view subset selection",
+      "final candidate selection",
+      "unknown-outcome replay prevention",
+      "credential echo rejection"
+    ],
+    "validation_mode": "Mocked VLM, image API, 3D worker and Blender boundaries with real local mesh QA, rendering, state transitions, evidence verification and asset export.",
+    "external_paid_requests": 0,
+    "live_provider_validation": false,
+    "source_sha256": {
+      "generation/src/agile3d/agent_backend.py": "0b76b4d4d6aa7535fb9d6384e35e646e4edb049aa4678d971ee210da01400b57",
+      "generation/src/agile3d/vlm_backend.py": "16c91de961cc7deff34175458725978795fbe8642937b193f738193acf47e4aa",
+      "generation/src/agile3d/agent_loop.py": "045110a82d4639b53f83b7b8d5888ee0371d22eaba39a56ac3b896c8183d6408",
+      "generation/src/agile3d/models.py": "5271dc2d5a472102f118db6b8425d82662be34e2560c6ce353b0611db8e44889",
+      "generation/src/agile3d/generation.py": "9228a3099f16de0d8ba42195d1609ff4453686f93d8804142697b095b983e57e",
+      "generation/src/agile3d/final_output.py": "7049f571e9d1622a770caee922fafb6a5a73fecd23272b6f8ac4f9f4cd14de8f",
+      "generation/src/agile3d/pipeline.py": "ada7bf2caf3262bc7d5954ab6dd4c13efd2309cc9963d589470d0c28325e86bb",
+      "generation/src/agile3d/cli.py": "bb5f2f1eaadfadc5fc374a7e823b4539696586e99334f44bdc9f3f772d754ae3",
+      "generation/src/agile3d/mcp_server.py": "fff3d0a841b46f23bdcdca1459c40e9011f05f5e4e7c4ddc286805e6f1847416",
+      "generation/src/agile3d/codex_backend.py": "e7871b6a6215d6e4e99231becbc9d5604d15c32b7d8abae19d5586ff4c8b473f",
+      "generation/configs/agile-paper-vlm.json": "7ef917d61d256e0e5c7471f9d89a2d12a3e10e4beb3872d3ec5d0fc28c53cf30",
+      "generation/tests/test_vlm_backend.py": "88ef15beb6e7a12777147d396c540ab15df9490562f97b4f8053b61f76c9e2a8"
+    },
+    "optimization_or_preprocessing_changes": false,
+    "code_pushed": false
+  },
+  "updated_at": "2026-10-15T16:01:13.567456+00:00",
+  "self_contained_data_packaging": {
+    "checked_at": "2026-10-14T05:45:31.453426+00:00",
+    "data_revision": "e306a6b973ac88838d0ec5c0325cddd039b4c28e",
+    "previous_data_revision": "85b3a0c9f817d92142bda2cf46a94ed0a6b77c2c",
+    "manifest_sha256": "416cd9288c48c356a4100eaae9e5599cb8fe3c2e94d8c5df40ad9ae5392e1e36",
+    "archive_count": 36,
+    "merged_initialization_archives": 8,
+    "remote_archive_sizes_and_hashes_verified": 36,
+    "logical_files_unchanged": 65775,
+    "previous_revision_preserved": true,
+    "anonymous_download": {
+      "scenes": [
+        "BB12",
+        "MC1"
+      ],
+      "initial_cache_empty": true,
+      "archives_verified": 4,
+      "members_verified": 6574,
+      "archive_and_member_sha256_passed": true,
+      "transport_recovery": "BB12 had one stalled Xet range; a later MC1 HTTP stream was truncated. Anonymous bounded HTTP ranges from the same official revision produced both published archive SHA256 hashes before the documented downloader resumed.",
+      "initial_partial_and_logs_preserved": true
+    },
+    "cpu_loading": {
+      "passed": true,
+      "frame_ids_per_scene": [
+        0,
+        5
+      ],
+      "comparison": "New and previous archive contents loaded through the same release parsers and datasets.",
+      "all_compared_inputs_exact": true,
+      "source_sha256": {
+        "tools/download_ho3d.py": "24dec9f410d0481047a046c830f114f0402ecfbee16a1ab34427148e038f0f6e",
+        "optimization/data/loader.py": "c43d1665afde41b8af48ad72c4f607c948e773a621ba24f2bfba684fc295c1d8",
+        "optimization/data/megasam.py": "29dbd4f5fd088a1683db5c529c041dc385415d1808e1908cf74946a05f86fc5d",
+        "preprocessing/layout.py": "b9df46d3fae5319a97e794351fb9655c42a7829dabb5a76cf430ea0bff2d149f"
+      }
+    },
+    "scope": "Packaging, anonymous download and CPU input equivalence; no new optimization or evaluation.",
+    "earlier_end_to_end_run_unchanged": true,
+    "code_pushed": false
+  },
+  "generation_simplification": {
+    "date": "2026-10-14",
+    "scope": "Conda installation, simplified generation CLI, shared review implementation and one real MC1 procedural-geometry run; no code push.",
+    "routes_preserved": [
+      "paper_vlm_api",
+      "codex_assisted_3d_model",
+      "codex_procedural_geometry",
+      "external_assets"
+    ],
+    "new_commands": [
+      "doctor",
+      "generate",
+      "resume",
+      "status --human"
+    ],
+    "advanced_commands_retained": true,
+    "preflight_scope": "Offline schema/dependency/executable/credential-presence/worker checks; does not establish API access, load weights or test CUDA.",
+    "clean_environment": {
+      "manager": "Conda",
+      "fresh_prefix": true,
+      "python": "3.10.22",
+      "installed_from_wheel": true,
+      "editable_install": false,
+      "user_site_disabled": true,
+      "generation_imports_in_new_prefix": true,
+      "pip_check": "No broken requirements found.",
+      "blender": "4.5.4 LTS",
+      "codex_cli": "0.146.0"
+    },
+    "regressions": {
+      "passed": 196,
+      "failed": 0,
+      "skipped": 0,
+      "includes_real_blender": true,
+      "new_cli_tests": 19
+    },
+    "live_generation": {
+      "scene": "MC1",
+      "observed_rgb_frames": [
+        600,
+        630,
+        750
+      ],
+      "route": "Codex procedural geometry + built-in image-generation UV texture",
+      "status": "success",
+      "quality_status": "accepted",
+      "real_codex_calls_completed": 5,
+      "real_image_tool_calls": 1,
+      "geometry_attempts": 1,
+      "texture_attempts": 1,
+      "agent_scores_not_ground_truth_metrics": {
+        "geometry": 8.7,
+        "texture": 8.48,
+        "overall": 8.1
+      },
+      "geometry_exact_after_texture": true,
+      "uv_exact_after_texture": true,
+      "exported_texture_pixels_match_generated_image": true,
+      "formats": [
+        "GLB",
+        "OBJ",
+        "MTL",
+        "PNG",
+        "JSON provenance"
+      ],
+      "delivery_files_verified": 11,
+      "delivered_resume_no_new_calls_or_file_changes": true,
+      "limits": [
+        "Single object functional validation, not a generation benchmark or paper metric reproduction.",
+        "Minor artwork, lettering and carton-edge details remain approximate.",
+        "The UV texture used an external image tool; pure Codex describes geometry generation only.",
+        "VLM API and Hunyuan GPU routes were not live-tested in this run."
+      ]
+    },
+    "preserved_diagnostics": [
+      "Two model-access rejections before successful reference selection; configured account access must be checked online.",
+      "One local profile schema rejection occurred offline without a provider call.",
+      "Real Blender tests crashed under the restricted shell sandbox, then passed unchanged in the native runtime.",
+      "The initial test collection required the optional MCP extra; it was installed in the new environment."
+    ],
+    "live_run_wheel_sha256": "c5b2fbdc51ec98885b4b99ff1adc0f9b3b34d9feeee474bb9559ff4c234ab935",
+    "final_wheel_sha256": "fe46fc7190abc2224078d112d5a55393db93bf9699c4fdf7460a038784b4aa8d",
+    "post_run_change": "Only friendly selection-failure evidence context was added after the real run; the final wheel passed all 196 tests and preserved the completed job on resume.",
+    "source_sha256": {
+      "envs/generation-hunyuan.yml": "4ec5f2813e810df57bf367af4714a1af4a6429eed165d4dacdac4aa3312912ea",
+      "envs/generation.yml": "c9d463e9041ddbcfcb5f65500c78ebc47edb5a60dc6b11f5639b2d7f8ddfc4c9",
+      "generation/configs/agile-paper-codex.json": "2ac970c96105afbf048132d1efcbfd3d2ba73640ab0b65b573080a8a29290b30",
+      "generation/configs/agile-paper-external.json": "6712869523e749dd72330a274da186ecabeb49451249652bc09284547fca37f0",
+      "generation/configs/agile-paper-vlm.json": "7ef917d61d256e0e5c7471f9d89a2d12a3e10e4beb3872d3ec5d0fc28c53cf30",
+      "generation/configs/codex-generated-texture.json": "2e773ab83f06b08d89f986e529edf55d5993af61115ae82fd396a09c2f42b0b9",
+      "generation/configs/codex-legacy-atlas.json": "be6234c667e5025fded4c02841710491604e2dae3919815fabbd289dff629367",
+      "generation/configs/codex-paper-parallel.json": "ad89ee40ef0fe703587c9c678a2ac91d861fb6e718af2a33d103420024c583e0",
+      "generation/configs/codex-procedural.json": "228699898e30178b88837aac4733491b4cf0c55bddb0a9588a046eeb6fca6aed",
+      "generation/configs/hoi.example.json": "c841ba75cd05e68c5ab4523b2da84d61296ceb44bfff4e1cf1a225f495e9950e",
+      "generation/configs/hunyuan-blender.json": "196bfe2ad0bdf67d7cf7f8c46e26bc504136db65919a7b3cdbd6d0a6aef5daff",
+      "generation/configs/hunyuan.json": "9fad3ad870d24bf7a8db6f73464dfe9e088a6f15a925da39d767892b73b3d2a4",
+      "generation/configs/image-api.example.json": "2f55c7a065d869b65c356b959ac011ccbf564ba64489432bb795931e609e30ba",
+      "generation/configs/offline.json": "eb676a1d43c125ab89f8dc5986b57debf038402ed19f7745bf4d189ef25de391",
+      "generation/configs/review.example.json": "ddd0a6c92c34b7055604483027e1979e95a9ecc6d0fc31bc4194aee8f8f8f10f",
+      "generation/pyproject.toml": "d9d42872ba0d7c33664fd24c89f4fcdb8d7de6e8e419202b82508c41fd057e5b",
+      "generation/src/agile3d/__init__.py": "c2798670eb4d25dca4f31d4a8e197dac79903294dcf36f4580bdf34b69d3754a",
+      "generation/src/agile3d/agent_backend.py": "cd355687740535fbdf23e46680d2561aa7d7baf7edfc7c1052714371dab77fdc",
+      "generation/src/agile3d/agent_loop.py": "045110a82d4639b53f83b7b8d5888ee0371d22eaba39a56ac3b896c8183d6408",
+      "generation/src/agile3d/benchmark_metrics.py": "df8936578aac9c27f7d1257d8a0408d06aab2b9593abd22a59d9404d84e059be",
+      "generation/src/agile3d/blender_worker.py": "eb60230eb4c0d0e53488163cb06e2df9e7b326881b41e9311da84e91454b04d4",
+      "generation/src/agile3d/cli.py": "81a4410c8d70c312137bc474a2dfcc9be9b518743e898339ebe3dc40904e282b",
+      "generation/src/agile3d/codex_backend.py": "fec895102f47e32f1e4337dcc40b216eb3460b8b5bee1f97d10bcf07356d8b74",
+      "generation/src/agile3d/doctor.py": "cd7fa290b2df64a815d1e6dd5ea5187ea5a9bba481306345f769d86b723f867b",
+      "generation/src/agile3d/final_output.py": "7049f571e9d1622a770caee922fafb6a5a73fecd23272b6f8ac4f9f4cd14de8f",
+      "generation/src/agile3d/generation.py": "4edcbcde1ece7b3fe67793049f28f95ba4c7b61072e2748fe587bf855ec9a73c",
+      "generation/src/agile3d/hoi.py": "f698759dcb79167ee88c55fb46a1b791a0de8ba44fed5964157fc1f5ac5840ba",
+      "generation/src/agile3d/hoi_worker.py": "11bcc5748f15d4ab2d6ed21870d0134ebc88b8dc8a4e8474bac493fa7ca39f72",
+      "generation/src/agile3d/hunyuan_worker.py": "1ebe409287a55c4753a08e2978724179b4ebd2f9e88f2e12dba0a3d8b4feb119",
+      "generation/src/agile3d/mcp_server.py": "fff3d0a841b46f23bdcdca1459c40e9011f05f5e4e7c4ddc286805e6f1847416",
+      "generation/src/agile3d/mesh.py": "6d57e82f43a312d073230d4d56e3b3b6698d109c4c10bab0e58504c1a92f1472",
+      "generation/src/agile3d/models.py": "5271dc2d5a472102f118db6b8425d82662be34e2560c6ce353b0611db8e44889",
+      "generation/src/agile3d/pipeline.py": "ada7bf2caf3262bc7d5954ab6dd4c13efd2309cc9963d589470d0c28325e86bb",
+      "generation/src/agile3d/procedural.py": "5b757d733c5b2c906fdf3346c746fe1b14eb621b6c901b9e5f2f56134568539a",
+      "generation/src/agile3d/providers.py": "c6c44a27d3e0f45af2d4b0102b64cf37f1915a289308477b8811d55dbbb6100c",
+      "generation/src/agile3d/review_backend.py": "385f1758c88234e35f19015618f367afc288453aa862fd4814537b8fc33bbb4b",
+      "generation/src/agile3d/stage_reviews.py": "a16242a0b0b31fbf7363b9683fef3cfa5a0acc723c3d65d78cbdbe99cecb60eb",
+      "generation/src/agile3d/store.py": "bf5b4719a8ae09339673c54b3cfdcd70c22a6f765036fe4111d6974c1d693fbc",
+      "generation/src/agile3d/surface.py": "d8717bdc3df7f2e4f0b66c4a7c79bae0a379738f5f978f09e396d81f29dacfd7",
+      "generation/src/agile3d/texture.py": "9e3bd11829e8cb91a7fc010e4dd7323ae42a43d0fc15d52a824c82117dde606f",
+      "generation/src/agile3d/uv_orientation.py": "e496ed8a2fd9b38ed466d9b73ae07157b49d8cf38b427d424a523c733e602257",
+      "generation/src/agile3d/view_inputs.py": "e2f549a0fcd2bb5a323739b902c2f144abc5ec02ddadf2f5b6e34b89cd737d2e",
+      "generation/src/agile3d/view_selection.py": "8d65a678e2cd14863a0b31a675225ac4ef45f91a1ea9188bc80327d15e9ca692",
+      "generation/src/agile3d/vlm_backend.py": "aa52fda3078d94dc53fd70186f3f3c984c84769442ec8d0441996d53eaaf1976",
+      "generation/src/agile3d/worker.py": "63aedacb9ae924ae4d2d11eb10b25c4dc1b7cdc279411434a4d37f4de5e79176",
+      "generation/src/agile3d/workflow.py": "761fbc74f6fc6bf8ba60f45b3c0ae90aba3b79c529fcdd02da0cec8ce98cc983",
+      "generation/tests/test_cli_workflow.py": "5cc43f8ff08c7c4a3b9df899f1085b76d0f8749e599da6511d8096afe4ecedbe"
+    },
+    "code_pushed": false
+  },
+  "full_ho3d_release": {
+    "date": "2026-10-15",
+    "sequences": 18,
+    "sampled_frames": 3590,
+    "valid_GT_frames": 3437,
+    "input_revision": "e306a6b973ac88838d0ec5c0325cddd039b4c28e",
+    "evaluation_protocol": "evaluation-v2-gt-cv-robust-icp",
+    "all_training_evaluation_verification_returncodes_zero": true,
+    "means": {
+      "cd_right": 15.76693817940318,
+      "cd_interaction_hand_sim3_per_frame": 18.025824636356337,
+      "mpjpe_ra_r": 3.9453200101852417,
+      "cd_icp": 0.27095295121297674,
+      "f5_icp": 84.30437290672661,
+      "f10_icp": 98.52096371784118
+    },
+    "scene_source_commits": {
+      "MC1": "52b7db9f386cb24989b0f5ad1b49b8248493c397",
+      "ABF12": "52b7db9f386cb24989b0f5ad1b49b8248493c397",
+      "ABF14": "52b7db9f386cb24989b0f5ad1b49b8248493c397",
+      "BB12": "da1799afb8f265cc240103146eeb6fb6a44a21d1",
+      "BB13": "da1799afb8f265cc240103146eeb6fb6a44a21d1",
+      "GPMF12": "52b7db9f386cb24989b0f5ad1b49b8248493c397",
+      "GPMF14": "52b7db9f386cb24989b0f5ad1b49b8248493c397",
+      "GSF13": "da1799afb8f265cc240103146eeb6fb6a44a21d1",
+      "GSF14": "da1799afb8f265cc240103146eeb6fb6a44a21d1",
+      "MC4": "52b7db9f386cb24989b0f5ad1b49b8248493c397",
+      "MDF12": "da1799afb8f265cc240103146eeb6fb6a44a21d1",
+      "MDF14": "da1799afb8f265cc240103146eeb6fb6a44a21d1",
+      "ShSu10": "52b7db9f386cb24989b0f5ad1b49b8248493c397",
+      "ShSu12": "52b7db9f386cb24989b0f5ad1b49b8248493c397",
+      "SM2": "52b7db9f386cb24989b0f5ad1b49b8248493c397",
+      "SM4": "52b7db9f386cb24989b0f5ad1b49b8248493c397",
+      "SMu1": "da1799afb8f265cc240103146eeb6fb6a44a21d1",
+      "SMu40": "52b7db9f386cb24989b0f5ad1b49b8248493c397"
+    },
+    "maximum_native_rotation_error_deg": 1.1746156040824092e-05,
+    "maximum_native_object_error_mm": 5.132662408598294e-05,
+    "data_members_rehashed": 65775,
+    "original_results_preserved": true,
+    "report": "ho3d-results.md",
+    "source_change_scope": "Seven sequences used the backward-reader correction; eleven previously accepted sequences were retained."
+  },
+  "optimized_result_publication": {
+    "repository": "https://huggingface.co/datasets/Chrisss/AGILE",
+    "revision": "d8b7fdc3225b13e08f20cd692faf04237980ad6a",
+    "sequences": 18,
+    "archives": 18,
+    "archive_bytes": 5130118428,
+    "all_archive_and_member_hashes_verified": true,
+    "numerical_arrays_and_assets_byte_identical": true,
+    "old_results_and_input_data_unchanged": true,
+    "anonymous_download_and_loader_checks": [
+      {
+        "scene": "MC1",
+        "frames": 180,
+        "archive_sha256": "c1b3cee3e5c73a1b90d7571c4ac7928a9453ac3dd045d2ed672d5bb02bd311a6",
+        "all_member_hashes_verified": true,
+        "viewer_arrays_exact": true,
+        "evaluation_inputs_elementwise_identical": true,
+        "metrics_bytes_unchanged": true,
+        "rgb_depth_samples": [
+          0,
+          90,
+          179
+        ]
+      },
+      {
+        "scene": "BB13",
+        "frames": 205,
+        "archive_sha256": "de4ef690258e8bab00d1e70a70fafd26c1cce016d83fd4db34a78a6fd617a275",
+        "all_member_hashes_verified": true,
+        "viewer_arrays_exact": true,
+        "evaluation_inputs_elementwise_identical": true,
+        "metrics_bytes_unchanged": true,
+        "rgb_depth_samples": [
+          0,
+          102,
+          204
+        ]
+      }
+    ],
+    "candidate_download_cli_passed": true,
+    "candidate_download_cli_sha256": "256c51d3b3fe19128e74860dd3f18eaa8c90b41f5aca249f78f119a2f9d8e07d",
+    "public_document_checks": [
+      "README.md",
+      "ho3d/optimized/README.md",
+      "ho3d/optimized/manifest.json",
+      "ho3d/optimized/results.json",
+      "ho3d/optimized/SHA256SUMS"
+    ],
+    "full_scoring_rerun": false,
+    "reason": "The complete evaluator input arrays are elementwise identical to the independently scored originals."
+  }
+}
