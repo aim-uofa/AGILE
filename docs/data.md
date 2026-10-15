@@ -14,7 +14,7 @@ Each sequence has one self-contained preprocessed archive, including its 2D hand
 
 ## Download and use
 
-Run from the repository root after [installation](installation.md):
+Run from the repository root after [installation](installation.md#download-only-environment). Downloading alone needs only Python and the Hugging Face client, with no GPU or account:
 
 ```bash
 python tools/download_ho3d.py --scenes MC1 --output /ABS/data

@@ -27,4 +27,4 @@ Each of the 18 preprocessed archives now includes all of its sequence inputs. Th
 
 Evaluation uses the available prepared frame range, which can end before the raw video. See [sequence definitions](../configs/ho3d_scenes.json) and the evaluator's frame-coverage records. Keep display meshes separate from optimization proxies.
 
-DexYCB configurations, additional prepared data and the retargeting module are planned; see the [roadmap](../README.md#todo).
+DexYCB configurations, additional prepared data, an end-to-end in-the-wild video workflow and the retargeting module are planned; see the [roadmap](../README.md#todo).

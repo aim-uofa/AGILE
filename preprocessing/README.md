@@ -35,7 +35,30 @@ Set up Linux, a CUDA-capable GPU and the `agile-optim` environment using [instal
 | FoundationPose | Object scale and pose initialization | `foundationpose` |
 | AGILE + MANO | Hand selection, hand-to-depth alignment and output checks | `agile-optim` |
 
-Install the three external tools and their required weights separately, using the public forks and revisions in [preprocessing-toolchain.json](../configs/preprocessing-toolchain.json). Their environments are invoked through `conda run`; the names above can be changed with the command-line options. Model weights are not included in this repository.
+Install the three external tools and their required weights separately. Use these public forks: the pipeline depends on their video/depth/pose entry points. Clone them from the AGILE repository root:
+
+```bash
+mkdir -p external
+git clone https://github.com/Chuan-10/WiLoR.git external/WiLoR
+git -C external/WiLoR checkout c851b1bae9d65420f00091b729ea0f26f45d69db
+git clone https://github.com/Chuan-10/MoGe.git external/MoGe
+git -C external/MoGe checkout 14cd910362d75dda4413dd72a2c5c61dc5e78901
+git clone https://github.com/Chuan-10/FoundationPose.git external/FoundationPose
+git -C external/FoundationPose checkout 07c8609ad5a6e2eea88023cbfc0eca433f076edf
+```
+
+Follow each checkout's installation and weight-download instructions: [WiLoR](https://github.com/Chuan-10/WiLoR/blob/c851b1bae9d65420f00091b729ea0f26f45d69db/README.md#original-installation), [MoGe](https://github.com/Chuan-10/MoGe/blob/14cd910362d75dda4413dd72a2c5c61dc5e78901/README.md), and [FoundationPose](https://github.com/Chuan-10/FoundationPose/blob/07c8609ad5a6e2eea88023cbfc0eca433f076edf/readme.md#env-setup-option-2-conda-experimental). Keep them in their own Conda environments; use WiLoR's full source installation, since the pipeline calls `demo_vid.py`.
+
+Their environments are invoked through `conda run`; the names above can be changed with the command-line options. Model weights are not included in this repository. Return to the AGILE repository root and check the entry points before processing:
+
+```bash
+conda activate agile-optim
+python tools/check_preprocessing_toolchain.py \
+  --wilor-path external/WiLoR --moge-path external/MoGe \
+  --foundationpose-path external/FoundationPose
+```
+
+This checks the CLI contract and source hashes against [preprocessing-toolchain.json](../configs/preprocessing-toolchain.json). It does not load models or validate CUDA inference.
 
 ## Run
 
@@ -83,5 +106,9 @@ python -m preprocessing.check_inputs \
 Inspect the alignment visually as well: structural checks do not measure reconstruction accuracy. Continue with [optimization](../optimization/README.md#run-optimization), setting `--data-root /ABS/HO3D/new-preprocessed`.
 
 For the released sequences, the [prepared data](../docs/data.md) already includes the selected inputs. See the [input file reference](../docs/data-layout.md) when developing a loader or inspecting individual preparation files.
+
+## In-the-wild videos
+
+Object generation already accepts frames from your own single-hand videos. The complete custom-video workflow, including frame and mask preparation, preprocessing, contact-frame selection and optimization configurations, is on the [release roadmap](../README.md#todo). The current documented preprocessing and optimization presets target HO3D; no end-to-end in-the-wild example is included yet.
 
 [Back to the project overview](../README.md)

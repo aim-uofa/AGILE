@@ -127,8 +127,8 @@ agile doctor --config generation.local.json --json
 
 ```bash
 conda activate agile-generation
-python -m pip install --no-user './generation[dev,gemini]'
+python -m pip install --no-user './generation[dev,gemini,agent]'
 PYTHONPATH=generation/src python -m pytest generation/tests
 ```
 
-Set `AGILE_TEST_BLENDER` to include Blender integration tests. Ordinary tests use local fixtures or mocked services. See [recorded validation](../../docs/validation.json) for the scope of actual generation runs.
+The test suite includes MCP integration, so install the `agent` extra for tests even if you only use the CLI. Set `AGILE_TEST_BLENDER` to include Blender integration tests. Ordinary tests use local fixtures or mocked services. See [recorded validation](../../docs/validation.json) for the scope of actual generation runs.

@@ -10,6 +10,7 @@ imageio-ffmpeg==0.6.0
 tqdm==4.67.1
 tensorboard==2.20.0
 transformers==4.57.3
+huggingface-hub==0.36.2
 open3d==0.19.0
 trimesh==4.7.4
 transformations==2025.1.1

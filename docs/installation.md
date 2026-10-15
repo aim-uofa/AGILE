@@ -1,8 +1,44 @@
 # Installation
 
-Use Linux x86_64, Python 3.10 and the CUDA 11.8 toolkit for optimization. The toolkit must include `nvcc` to build native extensions. Keep generation and preprocessing dependencies in separate environments. Run commands from the repository root.
+Start with Git and [Conda](https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html). If you have not cloned AGILE yet, run the commands below; otherwise enter your existing checkout:
+
+```bash
+git clone https://github.com/aim-uofa/AGILE.git
+cd AGILE
+```
+
+Run commands from this directory and replace `/ABS/...` with your own absolute paths. Choose the setup for your task:
+
+| Task | Setup |
+| --- | --- |
+| Download prepared data or optimized results | [Download-only environment](#download-only-environment); no GPU or model weights required. |
+| Reconstruct, evaluate or visualize HO3D | [Optimization environment](#optimization-environment). MANO and DINO are needed for optimization; evaluation needs MANO and original HO3D ground truth. Viewing saved geometry needs neither. |
+| Generate a new object | Separate [generation environment](../generation/README.md#install-with-conda); install the CUDA worker only for model-based geometry. |
+| Prepare a raw sequence | Optimization environment plus the three [preprocessing tools](../preprocessing/README.md#dependencies). Skip this when using the released inputs. |
+
+## Download-only environment
+
+The public AGILE data and optimized results require no account or token. Python 3.10 and the Hugging Face client are sufficient:
+
+```bash
+conda create -n agile-download --override-channels -c https://conda.anaconda.org/conda-forge python=3.10 pip -y
+conda activate agile-download
+python -m pip install --no-user huggingface-hub==0.36.2
+python tools/download_ho3d.py --scenes MC1 --output /ABS/data
+```
+
+Use `--kind optimized` for completed reconstructions. This environment only downloads and verifies files; switch to the environment below to reconstruct, evaluate or visualize them.
 
 ## Optimization environment
+
+Use Linux x86_64, Python 3.10, an NVIDIA GPU and the CUDA 11.8 toolkit. Install a compatible NVIDIA driver, a C++ compiler and build tools; `nvidia-smi` and `nvcc --version` should work. The toolkit must include `nvcc` to build native extensions. The released full-sequence runs were validated on GPUs with 24 GB VRAM. Keep generation and preprocessing dependencies in separate environments.
+
+On a minimal Linux installation, also install the system OpenGL and GLib runtime libraries required by OpenCV and mesh processing. For Ubuntu 22.04:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y build-essential git libgl1 libopengl0 libglib2.0-0
+```
 
 ```bash
 conda create -n agile-optim --override-channels -c https://conda.anaconda.org/conda-forge python=3.10 pip -y
@@ -43,16 +79,23 @@ python -m pip check
 
 ## Licensed assets
 
-Obtain MANO separately, then generate local support files with the original released finger selection:
+Obtain [MANO](https://mano.is.tue.mpg.de/) separately and place the licensed right-hand file at `/ABS/MANO/MANO_RIGHT.pkl`. Then generate the support files with the released finger selection:
 
 ```bash
 python tools/prepare_mano_assets.py --model-dir /ABS/MANO --finger-mask configs/finger_vertices.json
 export HO3D_MANO_ROOT=/ABS/MANO
-export DINO_MODEL_PATH=/ABS/dinov3-vitl16-pretrain-lvd1689m
-export HO3D_ROOT=/ABS/HO3D/raw
 ```
 
-DINO must be the Transformers-compatible ViT-L/16 checkpoint with four register tokens, including config, processor configuration and weights. Use its upstream access process. MANO pickle files, topology templates and learned weights are not included. Evaluation requires the original HO3D annotations and object models, acquired separately.
+DINO uses the Transformers-compatible [DINOv3 ViT-L/16 checkpoint](https://huggingface.co/facebook/dinov3-vitl16-pretrain-lvd1689m) with four register tokens. Request access on its model page, then download its configuration, image processor and weights:
+
+```bash
+hf auth login
+hf download facebook/dinov3-vitl16-pretrain-lvd1689m \
+  --local-dir /ABS/dinov3-vitl16-pretrain-lvd1689m
+export DINO_MODEL_PATH=/ABS/dinov3-vitl16-pretrain-lvd1689m
+```
+
+This login is for the gated DINO model, not the public AGILE data. MANO model files and DINO weights are not included in AGILE. For evaluation, obtain the original [HO3D annotations and object models](https://github.com/shreyashampali/ho3d), then set `HO3D_ROOT` as shown in the [evaluation guide](../optimization/README.md#evaluation). Ground truth is not needed for optimization or visualization.
 
 The preparation tool creates the 1552-face hand rendering mesh, including its 14-triangle wrist cap. It preserves existing support files; use a fresh destination when replacing an older template.
 
@@ -78,8 +121,10 @@ CUDA_VISIBLE_DEVICES='' python -m unittest discover -s tests -v
 python tools/check_release.py
 
 conda activate agile-generation
-python -m pip install --no-user './generation[dev,gemini]'
+python -m pip install --no-user './generation[dev,gemini,agent]'
 PYTHONPATH=generation/src python -m pytest generation/tests
 ```
+
+The complete generation test suite includes the optional MCP interface, so its test installation includes the `agent` extra. Ordinary CLI use does not require it.
 
 See [validation.json](validation.json) for recorded tests and end-to-end validation status.

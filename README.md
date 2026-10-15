@@ -11,6 +11,8 @@
   <a href="https://huggingface.co/datasets/Chrisss/AGILE"><img src="https://img.shields.io/badge/Hugging%20Face-Data-FFD21E?style=for-the-badge" alt="Hugging Face Data"></a>
 </p>
 
+[Prepared data](https://huggingface.co/datasets/Chrisss/AGILE/tree/main/ho3d/preprocessed) · [Generated objects](https://huggingface.co/datasets/Chrisss/AGILE/tree/main/ho3d/generated) · [Optimized results](https://huggingface.co/datasets/Chrisss/AGILE/tree/main/ho3d/optimized) · [Installation](docs/installation.md)
+
 [Jin-Chuan Shi](https://chuan-10.github.io/)<sup>1\*</sup>, Binhong Ye<sup>1\*</sup>, Tao Liu<sup>1</sup>, Xiaoyang Liu<sup>1</sup>, Yangjinhui Xu<sup>1</sup>, Junzhe He<sup>1</sup>, Zeju Li<sup>1</sup>, [Hao Chen](https://stan-haochen.github.io/)<sup>1</sup>, [Chunhua Shen](https://cshen.github.io/)<sup>1,2</sup>
 
 <sup>1</sup>State Key Lab of CAD & CG, Zhejiang University &nbsp; <sup>2</sup>Zhejiang University of Technology
@@ -67,9 +69,16 @@ The current data release includes **HO3D configurations, preprocessed inputs and
 | [Paper, Table 1](https://arxiv.org/html/2602.04672v4#S4.T1) | 3.92 | 0.27 | 86.63 | 97.77 | 15.81 |
 | Released code and data | 3.9453 | 0.2710 | 84.30 | 98.52 | 15.7669 |
 
-Release scores average all **18 sequences** equally over the full available prepared range (3,590 sampled frames), using the released v2 evaluator. Interaction CDₕ uses wrist-relative `cd_right`; hand-Sim3 CD is reported separately. Prepared frame coverage and object-registration details differ from the original paper evaluation, so the paper row is a reference rather than an exact reproduction claim. [Per-sequence results and protocol](docs/ho3d-results.md).
+Release scores average all **18 sequences** equally over the full available prepared range (3,590 sampled frames), using the [evaluation script included in this repository](optimization/README.md#evaluation). Interaction CDₕ measures object error relative to each hand's wrist; hand-aligned similarity-transform scores are reported separately. Prepared frame coverage and object-registration details differ from the original paper evaluation, so the paper row is a reference rather than an exact reproduction claim. [Per-sequence results and protocol](docs/ho3d-results.md).
 
 ## Getting Started
+
+Clone the repository and run the following commands from its root. Replace `/ABS/...` with absolute paths on your machine.
+
+```bash
+git clone https://github.com/aim-uofa/AGILE.git
+cd AGILE
+```
 
 1. Follow the [installation guide](docs/installation.md).
 2. Download a prepared sequence:
@@ -80,7 +89,9 @@ Release scores average all **18 sequences** equally over the full available prep
 
 3. Follow the [optimization guide](optimization/README.md) to reconstruct, evaluate and visualize the interaction.
 
-For new inputs, provide RGB frames and hand/object masks, [choose a generation route](generation/README.md#choose-a-route), then [prepare the sequence](preprocessing/README.md) before optimization. Generation uses Conda and provides `doctor`, `generate`, `status` and `resume` commands for setup and execution. See [release notes](docs/release-notes.md) for updates and [third-party notices](THIRD_PARTY_NOTICES.md) for dependencies.
+To view completed reconstructions without running optimization, follow [download and visualize results](docs/ho3d-results.md#download-and-visualize). Downloads are public and do not require a Hugging Face account.
+
+To prepare your own inputs, provide RGB frames and hand/object masks, [choose a generation route](generation/README.md#choose-a-route), then follow the [HO3D preprocessing guide](preprocessing/README.md). Generation accepts user-supplied frames; a complete in-the-wild video workflow with dedicated configurations and examples is planned. Generation uses Conda and provides `doctor`, `generate`, `status` and `resume` commands for setup and execution. See [release notes](docs/release-notes.md) for updates and [third-party notices](THIRD_PARTY_NOTICES.md) for dependencies.
 
 ## TODO
 
@@ -90,6 +101,7 @@ For new inputs, provide RGB frames and hand/object masks, [choose a generation r
 - [x] Release validated HO3D optimized reconstructions and per-sequence metrics.
 - [ ] Release DexYCB optimization and evaluation configurations.
 - [ ] Release DexYCB preprocessed inputs and generated object assets.
+- [ ] Release the in-the-wild video workflow, including frame and mask preparation, hand/depth alignment, object initialization, optimization configurations and an end-to-end example.
 - [ ] Release the retargeting module with documentation and examples.
 
 ## License

@@ -6,7 +6,7 @@ These are final per-sequence optimization outputs, not pretrained network weight
 
 ## Download and visualize
 
-Install the [optimization and visualization dependencies](installation.md), then run from the repository root:
+Install the [optimization and visualization dependencies](installation.md#optimization-environment), then run from the repository root. If you only want the files, the [download-only environment](installation.md#download-only-environment) is sufficient.
 
 ```bash
 python tools/download_ho3d.py --kind optimized --scenes MC1 --output /ABS/data
@@ -14,17 +14,22 @@ python -m scripts.vis.run_viser_hoi \
   --data-dir /ABS/data/HO3D/optimized/train/MC1/aligned --port 8090
 ```
 
+Open `http://127.0.0.1:8090` in your browser. For a remote machine, forward the port with `ssh -N -L 8090:127.0.0.1:8090 USER@HOST`, then open the same local URL.
+
 You can also download an archive directly from [Hugging Face](https://huggingface.co/datasets/Chrisss/AGILE/tree/main/ho3d/optimized):
 
 ```bash
 hf download Chrisss/AGILE --repo-type dataset \
   ho3d/optimized/MC1.tar.gz ho3d/optimized/SHA256SUMS --local-dir /ABS/downloads
-cd /ABS/downloads
-sha256sum --check --ignore-missing ho3d/optimized/SHA256SUMS
-tar -xzf ho3d/optimized/MC1.tar.gz -C /ABS/data
+mkdir -p /ABS/data
+(
+  cd /ABS/downloads
+  sha256sum --check --ignore-missing ho3d/optimized/SHA256SUMS
+)
+tar -xzf /ABS/downloads/ho3d/optimized/MC1.tar.gz -C /ABS/data
 ```
 
-Create `/ABS/data` first. The repository downloader above also validates every archive member and guards against unsafe extraction and accidental overwrites.
+This Linux example keeps your shell in the repository directory. On other platforms, use the Python downloader above for portable checksum verification. It also validates every archive member and guards against unsafe extraction and accidental overwrites.
 
 Omit `--scenes` to download all 18 sequences. Add `--revision COMMIT` to pin the Hugging Face release. The downloader verifies the archive and every extracted file and refuses to overwrite different local files. Visualization reads saved geometry and does not require the original MANO model, DINO weights or evaluation ground truth.
 

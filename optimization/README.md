@@ -81,7 +81,16 @@ Use this wrapper to apply the released configuration. Advanced research options 
 
 ## Evaluation
 
-Obtain the original HO3D annotations and object models, and set their root directory. The layout must include `train/MC1/` and `models/` as provided by HO3D.
+Obtain the original [HO3D annotations and object models](https://github.com/shreyashampali/ho3d), and set their root directory. For MC1, the expected layout includes:
+
+```text
+HO3D/raw/
+  train/MC1/rgb/00000.jpg
+  train/MC1/meta/00000.pkl
+  models/003_cracker_box/textured_simple.obj
+```
+
+Keep the complete sequence and the model's associated material/texture files. These ground-truth files are needed only for evaluation and are not in the AGILE data download.
 
 ```bash
 export HO3D_ROOT=/ABS/HO3D/raw
@@ -100,7 +109,9 @@ The evaluator checks that prediction frame IDs match the declared full-sequence 
 | `cd_right` | Wrist-relative interaction Chamfer distance: bidirectional squared distance sum in cm², without fitting rotation or scale. |
 | `cd_interaction_hand_sim3_per_frame` | Interaction Chamfer distance after fitting a per-frame similarity transform to hand joints and applying it to the object, in cm². |
 
-The two interaction metrics answer different questions and should not be interchanged. Compare the same metric over the same sequence and frame coverage. The output records protocol `evaluation-v2-gt-cv-robust-icp`, per-metric coverage and the evaluation code revision. A partial run cannot substitute for full-sequence evaluation.
+The two interaction metrics answer different questions and should not be interchanged. Compare the same metric over the same sequence and frame coverage. A partial run cannot substitute for full-sequence evaluation.
+
+`evaluation-v2-gt-cv-robust-icp` is the protocol identifier recorded by this repository's evaluation script, not a separate package to install. The script matches prediction and ground-truth frame IDs, converts HO3D ground truth to OpenCV camera coordinates, and records the valid frames used by each metric. Object shape is registered at the first valid frame with deterministic initialization and robust ICP; wrist-relative interaction CD does not use that fitted rotation or scale. The output also records the evaluation code revision so results can be compared under the same protocol.
 
 ## Export and visualize
 
