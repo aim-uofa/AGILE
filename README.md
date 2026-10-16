@@ -125,4 +125,4 @@ If you find this work useful, please consider citing:
 
 ## Acknowledgements
 
-We thank the authors of [HOLD](https://github.com/zc-alexfan/hold), [MagicHOI](https://github.com/MagicHOI/MagicHOI), [WiLoR](https://github.com/rolpotamias/WiLoR), [FoundationPose](https://github.com/NVlabs/FoundationPose), [MoGe](https://github.com/microsoft/MoGe), [MegaSAM](https://github.com/mega-sam/mega-sam), and [Viser](https://github.com/nerfstudio-project/viser) for their excellent work.
+We thank the authors of [HOLD](https://github.com/zc-alexfan/hold), [MagicHOI](https://github.com/byran-wang/MagicHOI), [WiLoR](https://github.com/rolpotamias/WiLoR), [FoundationPose](https://github.com/NVlabs/FoundationPose), [MoGe](https://github.com/microsoft/MoGe), [MegaSAM](https://github.com/mega-sam/mega-sam), and [Viser](https://github.com/nerfstudio-project/viser) for their excellent work.
